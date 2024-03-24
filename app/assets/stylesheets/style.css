@@ -1053,24 +1053,3 @@ footer p {
   width: 30%;
   margin-right: 10px;
 }
-
-.search-form .search-btn {
-  width: 10%;
-}
-
-.input-birth-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.input-birth-wrap select {
-  width: 15%;
-  margin: 5px 0 15px 5px;
-  height: 45px;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 14px;
-  cursor: pointer;
-}

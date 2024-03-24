@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: 名前
+        birth_day: 生年月日
+        event: 専門種目
+        goal: 目標
