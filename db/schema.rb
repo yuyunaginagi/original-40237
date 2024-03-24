@@ -20,6 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_23_124053) do
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "nickname", null: false
+    t.date "birth_day", null: false
+    t.string "event", null: false
+    t.string "goal", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
