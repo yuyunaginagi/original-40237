@@ -19,6 +19,11 @@ class ResultsController < ApplicationController
     end
   end
 
+  def destroy
+    result = Result.find(params[:id])
+    result.destroy
+  end
+
   private
 
   def result_params

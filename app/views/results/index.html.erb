@@ -1,1 +1,11 @@
-<h1>リザルト</h1>
+<div class="contents row">
+  <% @results.each do |result| %>
+      <p><%= result.user.nickname %></p>
+      <p><%= result.date %></p>
+      <p><%= result.game_name %></p>
+      <span class="name">
+        <%= result.event.name %>
+        <%= result.result %>
+      </span>
+  <% end %>
+</div>
