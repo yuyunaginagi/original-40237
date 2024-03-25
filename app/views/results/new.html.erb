@@ -2,6 +2,7 @@
   <div class="container">
     <h3>競技結果投稿</h3>
     <%= form_with(model: @result, local: true) do |form| %>
+      <%= render "layouts/error_messages", model: @result %><br>
       <%= form.label :date, "日付" %>
       <%= form.date_field :date, placeholder: "日付" %>
       <%= form.text_field :game_name, placeholder: "大会名" %>
