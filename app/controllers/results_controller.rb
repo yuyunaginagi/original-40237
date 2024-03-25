@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
   end
 
   def new
+    @result = Result.new
   end
 
   def move_to_index

@@ -1013,6 +1013,15 @@ form input[type="submit"]:hover {
   box-sizing: border-box;
 }
 
+.contain {
+  margin: 7px 0 20px 0;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
 .container h3 {
   margin: 0 0 20px;
   text-align: center;

@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_23_124053) do
   create_table "results", charset: "utf8", force: :cascade do |t|
-    t.string "game_name"
+    t.date "date", null: false
+    t.string "game_name", null: false
+    t.integer "event_id", null: false
+    t.string "result", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
