@@ -1,17 +1,11 @@
-<div class="contents row">
-  <% @results.each do |result| %>
-      <p><%= result.date %></p>
-      <p><%= result.game_name %></p>
-      <span class="name">
-        <%= result.event.name %>
-        <%= result.result %>
-              <div class="more">
-        <ul class="more_list">
-          <li>
-            <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete } %>
-          </li>
-        </ul>
-      </div>
-      </span>
-  <% end %>
-</div>
+<% @results.each do |result| %>
+  <div class="result">
+    <%= result.date %>
+    <%= result.game_name %><br>
+    <%= result.event.name %>
+    <%= result.result %>
+    <div class="destroy">
+    <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete } %>
+    </div>
+  </div>
+<% end %>

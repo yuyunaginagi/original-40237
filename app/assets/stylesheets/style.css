@@ -1062,3 +1062,21 @@ footer p {
   width: 30%;
   margin-right: 10px;
 }
+
+.result{
+  display: flex;
+  background-color: #fff;
+  border: solid 1px gainsboro;
+  border-radius: 5px; 
+  margin: 20px;
+  padding: 5px;
+  width: 400px;
+}
+
+.destroy{
+  border: solid 1px gray;
+  background-color: gainsboro;
+  border-radius: 5px;
+  margin: 20px 0 0 175px;
+  height: 26px;
+}
