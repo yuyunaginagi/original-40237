@@ -17,6 +17,7 @@
 | Column                 | Type       | Options     |
 |------------------------|------------|-------------|
 | user                   | references | null: false, foreign_key: true |
+| date                   | date       | null: false |
 | game_name              | string     | null: false |
 | event_id               | integer    | null: false |
 | result                 | text       | null: false |
