@@ -4,8 +4,10 @@
     <%= result.game_name %><br>
     <%= result.event.name %>
     <%= result.result %>
-    <div class="destroy">
-    <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete } %>
-    </div>
+    <% if current_user == result.user %>
+      <div class="destroy">
+        <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete } %>
+      </div>
+    <% end %>
   </div>
 <% end %>

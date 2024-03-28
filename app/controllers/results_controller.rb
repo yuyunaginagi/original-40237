@@ -1,9 +1,5 @@
 class ResultsController < ApplicationController
-  before_action :move_to_index, except: [:index]
-
-  def index
-    @results = Result.all
-  end
+  before_action :move_to_index
 
   def new
     @result = Result.new
@@ -32,7 +28,7 @@ class ResultsController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      redirect_to action: :index
+      redirect_to root_path
     end
   end
 

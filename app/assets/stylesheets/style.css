@@ -1071,12 +1071,16 @@ footer p {
   margin: 20px;
   padding: 5px;
   width: 400px;
+  justify-content: space-between;
+  align-items: end;
 }
 
 .destroy{
   border: solid 1px gray;
   background-color: gainsboro;
   border-radius: 5px;
-  margin: 20px 0 0 175px;
-  height: 26px;
+  
+  font-size: 12px;
+  margin-top: 2px;
+  height: 20px;
 }
