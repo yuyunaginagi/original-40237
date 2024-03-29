@@ -6,3 +6,8 @@ ja:
         birth_day: 生年月日
         event: 専門種目
         goal: 目標
+      result:
+        date: 日付
+        game_name: 大会名
+        event_id: 種目
+        result: 記録
