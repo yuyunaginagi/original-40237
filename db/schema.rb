@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_23_124053) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_30_053735) do
   create_table "results", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date", null: false
@@ -20,6 +20,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_23_124053) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
+  create_table "reviews", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date", null: false
+    t.string "activity", null: false
+    t.text "review", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -39,4 +49,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_23_124053) do
   end
 
   add_foreign_key "results", "users"
+  add_foreign_key "reviews", "users"
 end

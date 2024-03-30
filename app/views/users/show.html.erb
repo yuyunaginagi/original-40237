@@ -1,7 +1,7 @@
 <h1>　</h1>
-<h2>　専門種目　<%= @user.event %></h2>
-<h2>　目標　　　<%= @user.goal %></h2><br>
-<h2>　競技結果一覧</h2>
+<h2>専門種目　<%= @user.event %></h2>
+<h2>目標　　　<%= @user.goal %></h2><br>
+<h2>競技結果一覧</h2>
 <% @results.each do |result| %>
   <div class="result">
     <%= result.date %>

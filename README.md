@@ -30,7 +30,7 @@
 | user             | references | null: false, foreign_key: true |
 | date             | date       | null: false                    |
 | activity         | string     | null: false                    |
-| review           | string     | null: false                    |
+| review           | text       | null: false                    |
 
 - belongs_to :user
 - has_many :comments

@@ -11,3 +11,7 @@ ja:
         game_name: 大会名
         event_id: 種目
         result: 記録
+      review:
+        date: 日付
+        activity: 練習内容・競技内容
+        review: 振り返り
