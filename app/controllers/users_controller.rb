@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @nickname = @user.nickname
     @results = @user.results
+    @reviews = @user.reviews
   end
   
   def edit

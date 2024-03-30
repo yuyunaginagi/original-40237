@@ -1092,3 +1092,9 @@ footer p {
 h2{
   margin-left: 230px;
 }
+
+.reviews{
+  position:absolute;
+  top: 20.7%;
+  left: 37%;
+}

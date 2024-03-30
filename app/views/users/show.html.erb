@@ -15,3 +15,13 @@
     <% end %>
   </div>
 <% end %>
+
+<div class="reviews">
+  <h1>　</h1>
+  <h2>振り返り</h2>
+  <% @reviews.each do |review| %>
+    <div class="result">
+      <%= link_to review.date, review_path(review.id) %>
+    </div>
+  <% end %>
+</div>

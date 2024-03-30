@@ -1,0 +1,12 @@
+<h1>　</h1>
+<h2>振り返り一覧</h2>
+  <div class="result">
+    <%= @review.date %><br>
+    <%= "練習内容・競技内容　" + @review.activity %><br>
+    <%= "振り返り　" + @review.review %>
+    <% if current_user == @review.user %>
+      <div class="destroy">
+        <%= link_to '削除', review_path(@review.id), data: { turbo_method: :delete } %>
+      </div>
+    <% end %>
+  </div>
