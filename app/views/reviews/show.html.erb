@@ -6,7 +6,7 @@
     <%= "振り返り　" + @review.review %>
     <% if current_user == @review.user %>
       <div class="destroy">
-        <%= link_to '削除', review_path(@review.id), data: { turbo_method: :delete } %>
+        <%= link_to '削除', review_path(@review), data: { turbo_method: :delete } %>
       </div>
     <% end %>
   </div>

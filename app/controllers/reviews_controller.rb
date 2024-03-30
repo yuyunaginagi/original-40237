@@ -9,15 +9,19 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    @user = User.find(params[:id])
     @review = Review.find(params[:id])
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
   end
 
   private

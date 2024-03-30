@@ -9,7 +9,7 @@ class ResultsController < ApplicationController
     @result = Result.new(result_params)
     @result.user = current_user
     if @result.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
