@@ -1068,7 +1068,7 @@ footer p {
   background-color: #fff;
   border: solid 1px gainsboro;
   border-radius: 5px; 
-  margin: 20px;
+  margin: 20px 20px 20px 230px;
   padding: 5px;
   width: 400px;
   justify-content: space-between;
@@ -1083,4 +1083,63 @@ footer p {
   font-size: 12px;
   margin-top: 2px;
   height: 20px;
+}
+
+.review{
+  height: 150px;
+}
+
+h2{
+  margin-left: 230px;
+}
+
+.reviews{
+  position:absolute;
+  top: 20.7%;
+  left: 37%;
+}
+
+.review_main{
+  font-size: 18px;
+  background-color: #fff;
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  margin: 20px 20px 20px 230px;
+  padding: 10px 20px;
+  width: 900px;
+  height: 400px;
+  align-items: start;
+}
+
+.review_date{
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+.review_activity{
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: auto;
+}
+
+.review_review{
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: auto;
+}
+
+.review_destroy{
+  border: solid 1px gray;
+  background-color: gainsboro;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 14px;
+  margin-top: 2px;
+  height: 28px;
+  width: 120px;
+  text-align: center;
+  
 }
