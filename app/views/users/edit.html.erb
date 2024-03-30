@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="container">
+    <h2>編集する</h2>
+    <%= form_with model: @user, url: user_path(@user), id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: @user %><br>
+
+      <div class="field">
+        <%= f.label :専門種目 %><br />
+        <%= f.text_field :event %>
+      </div>
+
+      <div class="field">
+        <%= f.label :目標 %><br />
+        <%= f.text_field :goal %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "編集する" %>
+      </div>
+    <% end %>
+  </div>
+</div>
