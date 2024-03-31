@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :results, only: [:new, :create, :destroy]
   resources :users,   only: [:index, :show, :edit, :update]
-  resources :reviews, only: [:new, :create, :show, :destroy]
+  resources :reviews, only: [:new, :create, :show, :destroy] do 
+    resources :comments, only: :create
+  end
   
 end
