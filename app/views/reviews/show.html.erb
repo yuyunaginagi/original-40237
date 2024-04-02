@@ -19,8 +19,8 @@
     <% end %>
     <% if current_user != @review.user %>
         <%= form_with(model: [@review, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "コメントする", class: "review_destroy" %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
+        <%= form.submit "コメントする", class: "review_comment" %>
       <% end %>
     <% end %>
     <div class="comments">

@@ -39,7 +39,7 @@
 <!-- commentsテーブル -->
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
-| comment          | string     | null: false                    |
+| text             | text       | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | review           | references | null: false, foreign_key: true |
 
