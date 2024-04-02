@@ -20,7 +20,7 @@
   <h1>　</h1>
   <h2>振り返り一覧</h2>
   <% @reviews.each do |review| %>
-    <div class="result">
+    <div class="show_review">
       <%= link_to review.date, review_path(review.id) %>
     </div>
   <% end %>

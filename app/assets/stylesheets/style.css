@@ -1068,9 +1068,9 @@ footer p {
   background-color: #fff;
   border: solid 1px gainsboro;
   border-radius: 5px; 
-  margin: 20px 20px 20px 230px;
-  padding: 5px;
-  width: 400px;
+  margin: 1% 1% 1% 16.5%;
+  padding: 0.4%;
+  width: 28%;
   justify-content: space-between;
   align-items: end;
 }
@@ -1085,10 +1085,6 @@ footer p {
   height: 20px;
 }
 
-.review{
-  height: 150px;
-}
-
 h2{
   margin-left: 230px;
 }
@@ -1096,7 +1092,19 @@ h2{
 .reviews{
   position:absolute;
   top: 20.7%;
-  left: 37%;
+  left: 35%;
+}
+
+.show_review{
+  display: flex;
+  background-color: #fff;
+  border: solid 1px gainsboro;
+  border-radius: 5px; 
+  margin: 20px 20px 20px 230px;
+  padding: 5px;
+  width: 200px;
+  justify-content: space-between;
+  align-items: end;
 }
 
 .review_main{
