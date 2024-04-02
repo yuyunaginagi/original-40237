@@ -1115,7 +1115,7 @@ h2{
   margin: 20px 20px 20px 230px;
   padding: 10px 20px;
   width: 900px;
-  height: 400px;
+  height: auto;
   align-items: start;
 }
 
@@ -1150,4 +1150,20 @@ h2{
   width: 120px;
   text-align: center;
   
+}
+
+.review_form{
+  border: solid 1px green;
+}
+
+.error-message{
+  color: red;
+}
+
+.login-flash-message{
+  color: red;
+}
+
+.review_comment{
+  width: 150px;
 }

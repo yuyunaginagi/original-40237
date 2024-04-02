@@ -17,10 +17,13 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @comment = Comment.new
+    @comments  = @review.comments.includes(:user)
   end
 
   def destroy
     review = Review.find(params[:id])
+    review.comments.destroy_all
     review.destroy
     redirect_to user_path(current_user)
   end

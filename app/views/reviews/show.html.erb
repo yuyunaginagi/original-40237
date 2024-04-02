@@ -18,8 +18,18 @@
       </div>
     <% end %>
     <% if current_user != @review.user %>
-      <div class="review_destroy">
-        <%= link_to 'コメントする', "#" %>
-      </div>
+        <%= form_with(model: [@review, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
+        <%= form.submit "コメントする", class: "review_comment" %>
+      <% end %>
     <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "#" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
 </div>
