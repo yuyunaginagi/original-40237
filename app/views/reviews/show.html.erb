@@ -1,35 +1,41 @@
 <h1>　</h1>
 <h2>振り返り</h2>
-<div class="review_main">
-  <div class="review_date">
-    <%= @review.date %><br>
-  </div>
-  <div class="review_activity">
-    <%= "練習内容・競技内容" %><br>
-    <%= @review.activity %><br>
-  </div>
-  <div class="review_review">
-    <%= "振り返り内容" %><br>
-    <%= @review.review %>
-  </div>
-    <% if current_user == @review.user %>
-      <div class="review_destroy">
-        <%= link_to '削除', review_path(@review), data: { turbo_method: :delete } %>
-      </div>
-    <% end %>
-    <% if current_user != @review.user %>
-        <%= form_with(model: [@review, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
-        <%= form.submit "コメントする", class: "review_comment" %>
-      <% end %>
-    <% end %>
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "#" %>：</strong>
-          <%= comment.text %>
-        </p>
-      <% end %>
+<div class="contents row">
+  <div class="container">
+    <div class="review_date">
+      <%= @review.date %><br>
     </div>
+    <div class="review_activity">
+      <%= "練習内容・競技内容" %><br>
+      <%= @review.activity %><br>
+    </div>
+    <div class="review_review">
+      <%= "振り返り内容" %><br>
+      <%= @review.review %>
+    </div>
+      <div id="like-btn<%= @review.id %>">
+        <%= render partial: "likes/like", locals: { review: @review } %>
+      </div>
+      <% if current_user == @review.user %>
+        <div class="review_destroy">
+          <%= link_to '削除', review_path(@review), data: { turbo_method: :delete } %>
+        </div>
+      <% end %>
+      <% if current_user != @review.user %>
+        <%= form_with(model: [@review, @comment], local: true) do |form| %>
+          <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
+          <%= form.submit "コメントする", class: "review_comment" %>
+        <% end %>
+      <% end %>
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "#" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

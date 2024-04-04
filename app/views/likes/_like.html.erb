@@ -1,0 +1,5 @@
+<% if user_signed_in? && @review.liked_by?(current_user)%>
+  <%=link_to "👍", review_likes_path(@review.id),  data: { turbo_method: :delete }, class: "review_likes", remote: true %>
+<% else %>
+  <%=link_to "リアクションする", review_likes_path(@review.id), data: { turbo_method: :post }, class: "review_likes", remote: true %>
+<% end %>

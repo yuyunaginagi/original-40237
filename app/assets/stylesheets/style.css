@@ -1089,10 +1089,9 @@ h2{
   margin-left: 230px;
 }
 
-.reviews{
-  position:absolute;
-  top: 20.7%;
-  left: 35%;
+h3{
+  margin-left: 230px;
+  color: blue;
 }
 
 .show_review{
@@ -1100,11 +1099,12 @@ h2{
   background-color: #fff;
   border: solid 1px gainsboro;
   border-radius: 5px; 
-  margin: 20px 20px 20px 230px;
+  margin: 10px 10px 10px 223px;
   padding: 5px;
   width: 200px;
   justify-content: space-between;
   align-items: end;
+  text-decoration: underline;
 }
 
 .review_main{
@@ -1145,7 +1145,7 @@ h2{
   border-radius: 5px;
   padding: 3px;
   font-size: 14px;
-  margin-top: 2px;
+  margin-top: 10px;
   height: 28px;
   width: 120px;
   text-align: center;
@@ -1154,6 +1154,7 @@ h2{
 
 .review_form{
   border: solid 1px green;
+  margin-top: 10px;
 }
 
 .error-message{
@@ -1166,4 +1167,11 @@ h2{
 
 .review_comment{
   width: 150px;
+}
+
+.review_likes{
+  border: solid 2px aquamarine;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 10px;
 }
