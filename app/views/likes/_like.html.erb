@@ -1,5 +1,12 @@
-<% if user_signed_in? && @review.liked_by?(current_user)%>
-  <%=link_to "👍", review_likes_path(@review.id),  data: { turbo_method: :delete }, class: "review_likes", remote: true %>
-<% else %>
-  <%=link_to "リアクションする", review_likes_path(@review.id), data: { turbo_method: :post }, class: "review_likes", remote: true %>
+<% if user_signed_in? %>
+  <% if @review.likes.exists? %>
+    <% liked_user = @review.likes.first.user %>
+    <% if @review.liked_by?(current_user) %>
+      <%= link_to "いいね:#{liked_user.nickname}", review_like_path(@review), data: { turbo_method: :delete }, class: "review_likes", remote: true %>
+    <% else %>
+      <%= link_to "リアクションする", review_likes_path(@review), data: { turbo_method: :post }, class: "review_likes", remote: true %>
+    <% end %>
+  <% else %>
+    <%= link_to "リアクションする", review_likes_path(@review), data: { turbo_method: :post }, class: "review_likes", remote: true %>
+  <% end %>
 <% end %>

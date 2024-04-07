@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   validates :date, presence: true
   validates :activity, presence: true

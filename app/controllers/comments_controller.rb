@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       redirect_back(fallback_location: root_path)
-    else
-      redirect_back(fallback_location: root_path, alert: "コメントの作成に失敗しました")
     end
   end
 
