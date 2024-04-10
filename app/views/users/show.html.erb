@@ -11,7 +11,7 @@
     <%= result.result %>
     <% if current_user == result.user %>
       <div class="destroy">
-        <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete, confirm: '本当に削除していいですか？' } %>
+        <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
       </div>
     <% end %>
   </div>

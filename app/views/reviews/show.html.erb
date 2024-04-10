@@ -31,7 +31,7 @@
       </div>
       <% if current_user == @review.user %>
         <div class="review_destroy">
-          <%= link_to '削除', review_path(@review), data: { turbo_method: :delete, confirm: '本当に削除していいですか？' } %>
+          <%= link_to '削除', review_path(@review), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
         </div>
       <% end %>
     </div>
