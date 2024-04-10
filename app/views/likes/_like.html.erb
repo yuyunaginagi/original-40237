@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
   <% if !@review.liked_by?(current_user) && @review.user != current_user %>
-    <%= link_to "👍", review_likes_path(@review), data: { turbo_method: :post }, class: "review_likes", remote: true %>
+    <%= link_to "いいね♪", review_likes_path(@review), data: { turbo_method: :post }, class: "review_likes", remote: true %>
   <% elsif @review.liked_by?(current_user) %>
     <%= link_to "済", review_like_path(@review), data: { turbo_method: :delete }, class: "review_likes", remote: true %>
   <% elsif @review.user == current_user %>
     <span class="review_likes">
-      <%= "👍" + @review.likes.count.to_s + "人：" %>
+      <%= "いいね♪" + @review.likes.count.to_s + "人：" %>
       <% @review.likes.each do |like| %>
         <%= like.user.nickname %>
       <% end %>
