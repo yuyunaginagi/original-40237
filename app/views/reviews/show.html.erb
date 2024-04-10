@@ -13,9 +13,9 @@
       <%= "【振り返り内容】" %><br>
       <%= @review.review %>
     </div>
-      <%# <div id="like-btn<%= @review.id %>
-        <%# <%= render partial: "likes/like", locals: { review: @review } %>
-      <%# </div> %>
+      <div id="like-btn<%= @review.id %>">
+        <%= render partial: "likes/like", locals: { review: @review } %>
+      </div>
       <%= form_with(model: [@review, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
         <%= form.submit "コメントする", class: "review_comment" %>
