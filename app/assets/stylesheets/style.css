@@ -744,13 +744,13 @@ header.header {
   left: 0;
   right: 0;
   z-index: 5;
-  height: 70px;
+  height: 85px;
 }
 
 
 
 header.header div.header__bar.row h1.grid-6 {
-  font-size: 15px;
+  font-size: 16px;
   float: left;
 }
 
@@ -1062,9 +1062,9 @@ footer p {
   background-color: #fff;
   border: solid 1px gainsboro;
   border-radius: 5px; 
-  margin: 1% 1% 1% 5%;
+  margin: 10px 10px 10px 20px;
   padding: 2px;
-  width: 28%;
+  width: 300px;
   justify-content: space-between;
   align-items: end;
 }
@@ -1073,7 +1073,6 @@ footer p {
   border: solid 1px gray;
   background-color: gainsboro;
   border-radius: 5px;
-  
   font-size: 12px;
   margin-top: 2px;
   height: 20px;
@@ -1095,7 +1094,7 @@ h3{
   border-radius: 5px; 
   margin: 10px 10px 10px 20px;
   padding: 5px;
-  width: 200px;
+  width: 300px;
   justify-content: space-between;
   align-items: end;
   text-decoration: underline;
