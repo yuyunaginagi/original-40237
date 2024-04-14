@@ -1,10 +1,14 @@
 <% if user_signed_in? %>
-<h1>　</h1>
-<h2>登録者一覧</h2>
+  <h1>　</h1>
+  <h2>登録者一覧</h2>
   <% @users.each do |user| %>
     <div class="result">
-      <%= link_to user.nickname, user_path(user) %>
-    </div>
+    <%= link_to user.nickname, user_path(user) %>
+    <% if user.results.any? { |result| result.created_at >= 12.hours.ago } ||
+          user.reviews.any? { |review| review.created_at >= 12.hours.ago } %>
+      <span class="new-label">NEW!</span>
+    <% end %>
+  </div>
   <% end %>
 
 <% else %>

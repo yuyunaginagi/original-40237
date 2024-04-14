@@ -1076,6 +1076,7 @@ footer p {
   font-size: 12px;
   margin-top: 2px;
   height: 20px;
+  width: 40px;
 }
 
 h2{
@@ -1167,4 +1168,9 @@ h3{
   border-radius: 5px;
   text-align: center;
   margin-left: 10px;
+}
+
+.new-label{
+  color: red;
+  font-weight: bold;
 }
