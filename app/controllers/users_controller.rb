@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname
-    @results = @user.results
-    @reviews = @user.reviews
+    @results = @user.results.order(date: :desc)
+    @reviews = @user.reviews.order(date: :desc)
   end
   
   def edit

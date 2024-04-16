@@ -1,25 +1,28 @@
-<h1>　</h1>
-<h2>専門種目　<%= @user.event %></h2>
-<h2>目標　　　<%= @user.goal %></h2><br>
+<h1>　</h1><br>
+　専門種目　<%= @user.event %><br>
+　生年月日　<%= @user.birth_day %><br>
+　　　目標　<%= @user.goal %><br><br>
 
 <h3>競技結果一覧</h3>
-<% @results.each do |result| %>
-  <div class="result">
-    <%= result.date %>
-    <%= result.game_name %><br>
-    <%= result.event.name %>
-    <%= result.result %>
-    <% if current_user == result.user %>
-      <div class="destroy">
-        <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<div class="scrollable-container">
+  <% @results.each do |result| %>
+    <div class="result">
+      <%= result.date %>
+      <%= result.game_name %><br>
+      <%= result.event.name %>
+      <%= result.result %>
+      <% if current_user == result.user %>
+        <div class="destroy">
+          <%= link_to '削除', result_path(result.id), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<div class="reviews">
-  <h1>　</h1>
-  <h3>振り返り一覧</h3>
+<h1>　</h1>
+<h3>振り返り一覧</h3>
+<div class="scrollable-container">
   <% @reviews.each do |review| %>
     <div class="show_review">
       <%= link_to review.date, review_path(review.id) %>
