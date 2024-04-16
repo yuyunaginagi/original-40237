@@ -5,6 +5,11 @@
       <%= render "devise/shared/error_messages", resource: @user %><br>
 
       <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :nickname %>
+      </div>
+
+      <div class="field">
         <%= f.label :専門種目 %><br />
         <%= f.text_field :event %>
       </div>
