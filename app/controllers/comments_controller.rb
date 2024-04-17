@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_back(fallback_location: root_path)
+      CommentChannel.broadcast_to @review, { comment: @comment, user: @comment.user }
     end
   end
 

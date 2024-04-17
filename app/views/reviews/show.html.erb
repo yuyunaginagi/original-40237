@@ -13,27 +13,26 @@
       <%= "【振り返り内容】" %><br>
       <%= @review.review %>
     </div>
-      <div id="like-btn<%= @review.id %>">
-        <%= render partial: "likes/like", locals: { review: @review } %>
-      </div>
-      <%= form_with(model: [@review, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
-        <%= form.submit "コメントする", class: "review_comment" %>
-      <% end %>
-      <div class="comments">
-        <h4>＜コメント一覧＞</h4>
-        <% @comments.each do |comment| %>
-          <p>
-            <strong><%= comment.user.nickname %>：</strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
-      </div>
-      <% if current_user == @review.user %>
-        <div class="review_destroy">
-          <%= link_to '削除', review_path(@review), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
-        </div>
+    <div id="like-btn<%= @review.id %>">
+      <%= render partial: "likes/like", locals: { review: @review } %>
+    </div>
+    <%= form_with(model: [@review, @comment], local: true, html: { id: "comments" }) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "review_form" %>
+      <%= form.submit "コメントする", class: "review_comment" %>
+    <% end %>
+    <div class="comments" id="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= comment.user.nickname %>：</strong>
+          <%= comment.text %>
+        </p>
       <% end %>
     </div>
+    <% if current_user == @review.user %>
+      <div class="review_destroy">
+        <%= link_to '削除', review_path(@review), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
+      </div>
+    <% end %>
   </div>
 </div>
