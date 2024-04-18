@@ -1026,19 +1026,6 @@ form input[type="submit"]:hover {
   color: #666;
 }
 
-.comments {
-  padding: 5px;
-  margin-top: 15px;
-}
-
-.comments a {
-  color: #57C3E9;
-}
-
-.comments a:hover {
-  text-decoration: underline;
-}
-
 footer {
   margin: 30px auto;
   padding: 10px;
@@ -1187,3 +1174,4 @@ h3{
   display: flex;
   flex-direction: column;
 }
+

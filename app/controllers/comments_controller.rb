@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       CommentChannel.broadcast_to @review, { comment: @comment, user: @comment.user }
+      redirect_to @review
     end
   end
 
