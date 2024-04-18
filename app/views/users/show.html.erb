@@ -1,9 +1,13 @@
 <h1>　</h1><br>
-　生年月日　<%= @user.birth_day %><br>
-　専門種目　<%= @user.event %><br>
-　　　目標　<%= @user.goal %><br><br>
+<div class="margin-left">
+  　生年月日　<%= @user.birth_day %><br>
+  　専門種目　<%= @user.event %><br>
+  　　　目標　<%= @user.goal %><br><br>
+</div>
 
-<h3>競技結果一覧</h3>
+<div class="margin-left">
+  <h3>競技結果一覧</h3>
+</div>
 <div class="scrollable-container">
   <% @results.each do |result| %>
     <div class="result">
@@ -21,7 +25,9 @@
 </div>
 
 <h1>　</h1>
-<h3>振り返り一覧</h3>
+<div class="margin-left">
+  <h3>振り返り一覧</h3>
+</div>
 <div class="scrollable-container">
   <% @reviews.each do |review| %>
     <div class="show_review">
