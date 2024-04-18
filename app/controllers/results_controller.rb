@@ -18,6 +18,7 @@ class ResultsController < ApplicationController
   def destroy
     result = Result.find(params[:id])
     result.destroy
+    redirect_to user_path
   end
 
   private
