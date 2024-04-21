@@ -20,22 +20,19 @@ https://original-40237.onrender.com/
 利用方法
 --------------------------------------------------------------
 
-競技結果投稿
---------------------------------------------------------------
+### 競技結果投稿
 1.トップページからユーザー新規登録もしくはログインをする  
 2.競技結果ボタンから、競技の結果（日付、大会名、種目、記録）を入力し投稿する
 
-振り返り投稿
---------------------------------------------------------------
+### 振り返り投稿
+
 1.ヘッダーの振り返りボタンをクリックして、その日の振り返り（日付、練習内容・試合内容、コメント）を入力し投稿する。
 
-コメント投稿
---------------------------------------------------------------
+### コメント投稿
 1.ユーザーの振り返りの詳細ページに遷移する。  
 2.振り返りの内容に対して、助言・励ましなど、コメントをする。
 
-いいね投稿
---------------------------------------------------------------
+### いいね投稿
 1.ユーザーの振り返りの詳細ページに遷移する。  
 2.他のユーザーの振り返りに「いいね♪」ボタンを押すと「済」に変わり、いいねをされたユーザーは誰にいいねをされたか表示される。
 
@@ -51,8 +48,7 @@ https://original-40237.onrender.com/
 
 実装した機能についての画像やGIFおよびその説明
 --------------------------------------------------------------
-ログイン(動画)
-![gif](https://gyazo.com/dfb1a37ca3c8ffa2271b6bd147d18190)  
+[ログイン(動画)](https://gyazo.com/dfb1a37ca3c8ffa2271b6bd147d18190)  
 [新規登録(動画)](https://gyazo.com/fab0e13e210b48da257101e982744299)  
 [競技結果投稿(動画)](https://gyazo.com/08a020c54d07e9dec6b29b86f9f15b81)  
 [競技結果削除（動画）](https://gyazo.com/847c64fef18ae9760f830e253d0350c4)  
@@ -79,8 +75,16 @@ https://original-40237.onrender.com/
 ・テスト（RSpecによるモデルの単体テスト）  
 ・テキストエディタ（Visual Studio Code）
 
-<!-- ローカルでの動作方法 -->
-<!-- -------------------------------------------------------------- -->
+ローカルでの動作方法
+--------------------------------------------------------------
+% git clone https://github.com/yuyunaginagi/original-40237.git  
+% cd original-40237  
+% bundle install  
+% yarn install  
+% rails db:create  
+% rails db:migrate  
+% rails s
+
 
 工夫したポイント
 --------------------------------------------------------------
@@ -102,7 +106,7 @@ usersテーブル
 | goal                | string  | null: false |
 
 
-Association
+### Association
 - has_many :results
 - has_many :reviews
 - has_many :comments
@@ -118,7 +122,7 @@ resultsテーブル
 | event_id               | integer    | null: false |
 | result                 | text       | null: false |
 
-Association
+### Association
 - belongs_to :user
 
 reviewsテーブル
@@ -130,7 +134,7 @@ reviewsテーブル
 | activity         | string     | null: false                    |
 | review           | text       | null: false                    |
 
-Association
+### Association
 - belongs_to :user
 - has_many :comments
 - has_many :likes
@@ -143,7 +147,7 @@ commentsテーブル
 | user             | references | null: false, foreign_key: true |
 | review           | references | null: false, foreign_key: true |
 
-Association
+### Association
 - belongs_to :user
 - belongs_to :review
 
@@ -155,6 +159,6 @@ likesテーブル
 | user             | references | null: false, foreign_key: true |
 | review           | references | null: false, foreign_key: true |
 
-Association
+### Association
 - belongs_to :user
 - belongs_to :review
