@@ -1,63 +1,3 @@
-<!-- usersテーブル -->
-| Column              | Type    | Options     |
-|---------------------|---------|-------------|
-| nickname            | string  | null: false |
-| email               | string  | null: false, unique: true |
-| encrypted_password  | string  | null: false |
-| birth_day           | date    | null: false |
-| event               | string  | null: false |
-| goal                | string  | null: false |
-
-- has_many :results
-- has_many :reviews
-- has_many :comments
-- has_many :likes
-
-<!-- resultsテーブル -->
-| Column                 | Type       | Options     |
-|------------------------|------------|-------------|
-| user                   | references | null: false, foreign_key: true |
-| date                   | date       | null: false |
-| game_name              | string     | null: false |
-| event_id               | integer    | null: false |
-| result                 | text       | null: false |
-
-- belongs_to :user
-
-<!-- reviewsテーブル -->
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-| user             | references | null: false, foreign_key: true |
-| date             | date       | null: false                    |
-| activity         | string     | null: false                    |
-| review           | text       | null: false                    |
-
-- belongs_to :user
-- has_many :comments
-- has_many :likes
-
-<!-- commentsテーブル -->
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-| text             | text       | null: false                    |
-| user             | references | null: false, foreign_key: true |
-| review           | references | null: false, foreign_key: true |
-
-- belongs_to :user
-- belongs_to :review
-
-<!-- likesテーブル -->
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-| like             | string     | null: false                    |
-| user             | references | null: false, foreign_key: true |
-| review           | references | null: false, foreign_key: true |
-
-- belongs_to :user
-- belongs_to :review
-
-
-
 アプリケーション名
 --------------------------------------------------------------
 SprintTrack Pro
@@ -111,7 +51,8 @@ https://original-40237.onrender.com/
 
 実装した機能についての画像やGIFおよびその説明
 --------------------------------------------------------------
-[ログイン(動画)](https://gyazo.com/dfb1a37ca3c8ffa2271b6bd147d18190)  
+ログイン(動画)
+![gif](https://gyazo.com/dfb1a37ca3c8ffa2271b6bd147d18190)  
 [新規登録(動画)](https://gyazo.com/fab0e13e210b48da257101e982744299)  
 [競技結果投稿(動画)](https://gyazo.com/08a020c54d07e9dec6b29b86f9f15b81)  
 [競技結果削除（動画）](https://gyazo.com/847c64fef18ae9760f830e253d0350c4)  
@@ -135,7 +76,7 @@ https://original-40237.onrender.com/
 --------------------------------------------------------------
 ・フロントエンド（HTML、CSS、JavaScript）  
 ・バックエンド（言語：Ruby　フレームワーク：Ruby on Rails）  
-・テスト（モデルの単体テスト）  
+・テスト（RSpecによるモデルの単体テスト）  
 ・テキストエディタ（Visual Studio Code）
 
 <!-- ローカルでの動作方法 -->
@@ -147,3 +88,73 @@ https://original-40237.onrender.com/
 2.投稿に対して、誤った削除が起こらないよう、削除ボタンを押した際は、確認ダイアログが表示されるようにした。  
 3.誰が最近投稿したかわかるように、12時間以内の投稿があれば、ユーザー一覧ページに「NEW!」と表示されるようにした。  
 4.ユーザーのほとんどが学生であるため、スマホでの見やすさにこだわった。PC用とスマホ用でビューを変化させた。
+
+
+usersテーブル
+--------------------------------------------------------------
+| Column              | Type    | Options     |
+|---------------------|---------|-------------|
+| nickname            | string  | null: false |
+| email               | string  | null: false, unique: true |
+| encrypted_password  | string  | null: false |
+| birth_day           | date    | null: false |
+| event               | string  | null: false |
+| goal                | string  | null: false |
+
+
+Association
+- has_many :results
+- has_many :reviews
+- has_many :comments
+- has_many :likes
+
+resultsテーブル
+-------------------------------------------------------------
+| Column                 | Type       | Options     |
+|------------------------|------------|-------------|
+| user                   | references | null: false, foreign_key: true |
+| date                   | date       | null: false |
+| game_name              | string     | null: false |
+| event_id               | integer    | null: false |
+| result                 | text       | null: false |
+
+Association
+- belongs_to :user
+
+reviewsテーブル
+-------------------------------------------------------------
+| Column           | Type       | Options                        |
+|------------------|------------|--------------------------------|
+| user             | references | null: false, foreign_key: true |
+| date             | date       | null: false                    |
+| activity         | string     | null: false                    |
+| review           | text       | null: false                    |
+
+Association
+- belongs_to :user
+- has_many :comments
+- has_many :likes
+
+commentsテーブル
+-------------------------------------------------------------
+| Column           | Type       | Options                        |
+|------------------|------------|--------------------------------|
+| text             | text       | null: false                    |
+| user             | references | null: false, foreign_key: true |
+| review           | references | null: false, foreign_key: true |
+
+Association
+- belongs_to :user
+- belongs_to :review
+
+likesテーブル
+--------------------------------------------------------------
+| Column           | Type       | Options                        |
+|------------------|------------|--------------------------------|
+| like             | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
+| review           | references | null: false, foreign_key: true |
+
+Association
+- belongs_to :user
+- belongs_to :review
