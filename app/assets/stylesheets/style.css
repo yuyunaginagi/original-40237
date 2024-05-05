@@ -1612,6 +1612,7 @@ h3{
   .review_form{
     border: solid 1px green;
     margin-top: 10px;
+    overflow-y: auto;
   }
   
   .error-message{
