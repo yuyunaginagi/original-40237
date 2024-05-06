@@ -6,7 +6,7 @@
       <%= form.label :date, "日付" %>
       <%= form.date_field :date, placeholder: "日付" %>
       <%= form.text_field :activity, placeholder: "練習内容・競技内容" %>
-      <%= form.text_area :review, placeholder: "振り返り", class: "review" %>
+      <%= form.text_area :review, placeholder: "振り返り", class: "review", rows: "5" %>
       <%= form.submit "投稿する" %>
     <% end %>
   </div>
