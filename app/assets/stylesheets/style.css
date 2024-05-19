@@ -1173,6 +1173,11 @@ h3{
   padding-left: 185px;
 }
 
+.comment-delete-link{
+  border: solid 1px;
+  background-color: snow;
+}
+
  /* タブレット表示時 */
  @media (max-width: 599px) {
   .btn,

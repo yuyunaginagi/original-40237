@@ -21,12 +21,17 @@
     <div class="comments" id="comments">
       <h4>＜コメント一覧＞</h4>
       <% @review.comments.each do |comment| %>
-        <p class="user-info"><%= comment.user.nickname %>：<%= comment.text %></p>
+        <p class="user-info">
+          <%= comment.user.nickname %>：<%= comment.text %>
+          <% if current_user == comment.user %>
+            <%= link_to '削除', review_comment_path(@review, comment), data: { turbo_method: :delete }, class: 'comment-delete-link', 'data-confirm': '本当に削除していいですか？' %>
+          <% end %>
+        </p>
       <% end %>
     </div>
     <% if current_user == @review.user %>
       <div class="review_destroy">
-        <%= link_to '削除', review_path(@review), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
+        <%= link_to '投稿削除', review_path(@review), data: { turbo_method: :delete }, class: 'delete-link', 'data-confirm': '本当に削除していいですか？' %>
       </div>
     <% end %>
 

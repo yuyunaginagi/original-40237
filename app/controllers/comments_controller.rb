@@ -9,6 +9,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+    comment.destroy
+    redirect_to @review
+  end
+
+
+
   private
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, review_id: params[:review_id])
