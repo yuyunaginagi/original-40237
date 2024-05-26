@@ -1,1 +1,5 @@
-document.getElementById('like-btn<%= @review.id %>').innerHTML = "<%= j(render partial: 'likes/like', locals: {review: @review}) %>"
+<script>
+  document.addEventListener("turbo:load", function() {
+    document.getElementById('like-btn<%= @review.id %>').innerHTML = "<%= j(render partial: 'likes/like', locals: {review: @review}) %>";
+  });
+</script>
