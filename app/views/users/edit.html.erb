@@ -4,6 +4,11 @@
       <%= render "devise/shared/error_messages", resource: @user %><br>
 
       <div class="field">
+        <%= f.label :学年 %><br />
+        <%= f.select :grade, options_for_select(['1年', '2年', '3年', '顧問'], @user.grade), prompt: '選択してください' %>
+      </div><br/>
+
+      <div class="field">
         <%= f.label :名前 %><br />
         <%= f.text_field :nickname %>
       </div>
