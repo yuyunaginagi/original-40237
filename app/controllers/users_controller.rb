@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = User.order(:grade)
     @results = Result.all
   end
 
